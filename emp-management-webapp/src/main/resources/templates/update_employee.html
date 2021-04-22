@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Management System</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>User Management System</h1>
+		<hr>
+		<h2>Update User Details </h2>
+		
+			<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+			<!-- TO ADD THE HIDDEN FORM FIELD  -->
+			<input type="hidden" th:field="*{id}"/>
+			<input type="text" th:field= "*{name}" class="form-control mb-4 col-4">
+			<input type="text" th:field= "*{email}" class="form-control mb-4 col-4">
+			<input type="text" th:field= "*{contact}" class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-info col-2">Update User</button>
+			
+			</form>
+			<a th:href="@{/}"> Back to Home page</a>
+	</div>
+</body>
+</html>
